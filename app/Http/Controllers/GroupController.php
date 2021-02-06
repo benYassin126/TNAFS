@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Students;
 use App\groups;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,8 +23,9 @@ class GroupController extends Controller
     {
         $Students = Students::all();
         $userID = \Auth::user()->id;
+        $user = User::find($userID);
         $allGroups = Groups::orderByDesc('GroupPoints')->select('id','GroupName','GroupSuper','GroupPoints')->where('GroupSuper', $userID)->get();
-        return view('layouts.group.index',compact('allGroups','Students'));
+        return view('layouts.group.index',compact('allGroups','Students','user'));
     }
 
     /**

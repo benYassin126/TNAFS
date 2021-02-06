@@ -6,7 +6,7 @@
     <label class="control-label">اسم الطالب</label>
 
     <div>
-      <input type="text" class="form-control"  placeholder="اسم الطالب"  autofocus name="StudentName" @isset($thisStudent) value="{{$thisStudent->StudentName}}" @endisset required >
+      <input type="text" class="form-control"  placeholder=""  autofocus name="StudentName" @isset($thisStudent) value="{{$thisStudent->StudentName}}" @endisset required >
   </div>
 </div>
 <!-- select -->

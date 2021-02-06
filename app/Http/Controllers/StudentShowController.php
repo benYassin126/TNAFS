@@ -12,9 +12,11 @@ class StudentShowController extends Controller
     public function index(User $userID)
     {
         $userid = $userID->id;
+        $user = User::where('id',$userid)->first();
         $allStudents = Students::orderByDesc('StudentPoints')->select('id','StudentName', 'StudentGroup', 'StudentSuper','StudentPoints')->where('StudentSuper', $userid)->get();
         $allGroups = Groups::orderByDesc('GroupPoints')->select('id','GroupName','GroupSuper','GroupPoints')->where('GroupSuper', $userid)->get();
-
+        $checkWatch = User::select('WatchResult')->where('id',$userID->id)->first();
+        $checkWatch = $checkWatch->WatchResult;
         $topNames = [];
 
         if ($allStudents->count()) {
@@ -72,7 +74,7 @@ class StudentShowController extends Controller
 
 
 
-return view('layouts.StudentShow',compact('allStudents','allGroups','topNames','orderArray','topNamesGroup','orderArrayGroup'));
+return view('layouts.StudentShow',compact('allStudents','allGroups','checkWatch','topNames','orderArray','topNamesGroup','orderArrayGroup','user'));
 
 }else {
     return redirect('student')->with('message','اضف طلاب حتى تظهر لك صفحة عرض النتائج للطلاب');

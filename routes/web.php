@@ -45,9 +45,18 @@ Route::post('setting/Twze3','SettingController@Twze3')->name('setting.Twze3');
 
 
 Route::get('overView','overViewController@index')->name('overView');
-
+Route::post('overView/WatchResult','overViewController@WatchResult');
 
 Route::get('/75{userID}1T','StudentShowController@index');
 
 Route::get('print', 'PrintController@index')->name('print');
 Route::post('print.showPrint', 'PrintController@showPrint')->name('print.showPrint');
+
+
+Route::get('profile', 'ProfileController@index')->name('profile');
+Route::post('profile', 'ProfileController@edit');
+
+
+
+
+

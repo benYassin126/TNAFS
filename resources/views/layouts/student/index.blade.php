@@ -9,8 +9,8 @@
     <!-- Strat MSG -->
     <!-- Strat MSG -->
     @if(session()->has('message'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="display-success">
-     <strong>{{ session()->get('message') }}</strong>
+    <div class="alert alert-success green fade show" role="alert" id="display-success">
+     <strong><i class="fas fa-check "></i> {{ session()->get('message') }}</strong>
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -18,7 +18,7 @@
 @endif
 
 @if ($errors->any())
-    <div class="alert-dismissible  alert alert-danger" id="display-success">
+    <div class="alert alert-danger" id="display-success">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -41,7 +41,7 @@
                     <option  value="{{$group->id}}"  @if (isset($GroupTitle) && $GroupTitle->GroupName == $group->GroupName) selected @endif >{{$group->GroupName}}</option>
                     @endforeach
                 </select>
-                <button type="submit" class="btn btn-info mt-2">تخصيص المجموعة  <i class="fas fa-search"></i></button>
+                <button type="submit" class="btn btn-tnafs mt-2">تخصيص المجموعة  <i class="fas fa-search"></i></button>
             </div>
         </form>
 
@@ -54,7 +54,7 @@
 
 
         <a href="{{route('student.create')}}" class="btn btn-success btn-block mt-4"><i class="fas fa-user"></i> اضافة طالب  </a>
-        <a href="{{route('print')}}" class="btn btn-warning btn-block"><i class="fas fa-print"></i> طباعة النتائج</a>
+        <a href="{{route('print')}}" class="btn btn-tnafs btn-block"><i class="fas fa-print"></i> طباعة النتائج</a>
     </div>
     <!-- /.card-header -->
     <div class="card-body table-responsive-sm">
@@ -81,7 +81,7 @@
             <td>
 
 
-                <buttn data-toggle="modal" data-target="#{{$student->id}}" class="btn btn-primary "><i class="fas fa-plus-circle"></i></buttn>
+                <buttn data-toggle="modal" data-target="#{{$student->id}}" class="btn btn-tnafs mb-2 "><i class="fas fa-plus-circle"></i></buttn>
 
 
                 <!-- Modal -->
@@ -97,14 +97,14 @@
                   <div class="modal-body">
                     <form action="{{route('student.points')}}" method="Post">
                         @csrf
-                        <input type="number" step="0.01"  name="points" placeholder="0" autofocus required> <span class="pl-2">نقطة</span>
-                        <input type="text" name="id" value="{{$student->id}}" style="display: none;">
+                        <input  type="number" step="0.01" class="mb-2"  name="points" placeholder="0" required> <span class="pl-2">نقطة</span>
+                        <input  type="text" name="id" value="{{$student->id}}" style="display: none;">
                         <button type="submit" name="add" class="btn btn-success">اضافة</button>
                         <button type="submit" name="dis" class="btn btn-danger">خصم</button>
                     </form>
                 </div>
 
-                <button type="button" class="btn btn-danger" data-dismiss="modal">اغلاق</button>
+                <button type="button" class="btn" data-dismiss="modal">اغلاق</button>
             </div>
         </div>
     </div>
@@ -117,26 +117,24 @@
 
 
 
-    <a href="{{route('student.edit',$student->id) }}" class="btn btn-info "><i class="fas fa-edit"></i></a>
+    <a href="{{route('student.edit',$student->id) }}" class="btn btn-tnafs mb-2"><i class="fas fa-edit"></i></a>
 
 
     <form method="post" action="{{route('student.destroy',$student->id)}}" style="display: inline-block;">
       @csrf
       @method('DELETE')
-      <button onclick="return confirm('{{__('هل انت متاكد ؟')}}')" class="btn btn-danger "><i class="fas fa-trash-alt"></i></buttn>
+      <button onclick="return confirm('{{__('هل انت متاكد ؟')}}')" class="btn mb-2 "><i class="fas fa-trash-alt"></i></buttn>
       </form>
   </td>
 </tr>
 
 @empty
 
-    <div class="alert alert-danger  fade show" role="alert">
-     <h4>لم تقم باضافة اي طالب بعد</h4>
-     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
+    <div class="alert">
+     <p>لم تقم باضافة اي طالب بعد</p>
+      <a style="text-decoration: none;" href="{{route('student.create')}}" class="btn btn-tnafs mb-4"><i class="fas fa-plus"></i> اضافة طالب </a>
     </div>
-       <a href="{{route('student.create')}}" class="btn btn-info mb-4"><i class="fas fa-plus"></i> اضافة طالب </a>
+
 
 @endforelse
 </tbody>

@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 use App\Students;
 use App\groups;
+use App\User;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
     public function index() {
         $userID = \Auth::user()->id;
+        $user = User::find($userID);
         $allGroups = Groups::select('id','GroupName','GroupSuper')->where('GroupSuper', $userID)->get();
         $allStudents = Students::select('id','StudentName','StudentPoints')->where('StudentSuper', $userID)->get();
-        return view('layouts.setting.index',compact('allGroups','allStudents'));
+        return view('layouts.setting.index',compact('allGroups','allStudents','user'));
     }
 
     public function addPointsToGroup () {

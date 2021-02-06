@@ -12,8 +12,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
   <title>{{ config('app.name') }} || @yield('title')</title>
-  <link rel="stylesheet"href="/css/app.css">
-
 
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -40,8 +38,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
+        <li class="nav-item d-none d-sm-inline-block ml-2">
+            <a  href="{{ url('/') }}/{{$StudentLink}}" target="_blank"  class="nav-link btn btn-tnafs"> <i class="fa fa-arrow-circle-left"></i> صفحة الطلاب  </a>
+        </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ url('/') }}/{{$StudentLink}}" target="_blank"  class="nav-link">صفحة الطلاب</a>
+            <a  href="https://api.whatsapp.com/send?phone=00966557248468" target="_blank"  class="nav-link  btn btn-tnafs"><i class="fab fa-whatsapp"></i> الدعم الفني  </a>
         </li>
     </ul>
 
@@ -53,10 +54,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{{ url('/') }}/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-      style="opacity: .8">
-      <span class="brand-text font-weight-light">تنافس</span>
+    <a href="{{ url('/') }}" class="brand-link" style="background-color: #1a2d4c">
+     {{-- <img src="{{ url('/') }}/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      style="opacity: .8"> --}}
+      <span class="brand-text font-weight-light" >تنافس</span><span class="right badge badge-danger"> <i class="fas fa-rocket"></i> الباقة المجانية</span>
   </a>
 
   <!-- Sidebar -->
@@ -64,7 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ url('/') }}/img/profile.png" class="img-circle elevation-2" alt="User Image">
+            <img src=@if (isset($user) && $user->Logo != null) "{{ url('/') }}/img/storage/logos/{{$user->Logo}}.png" @else "{{ url('/') }}/img/logo.png" @endif class="img-circle elevation-2" width="100" alt="User Image">
       </div>
       <div class="info">
           <a href="{{ url('/') }}/{{$StudentLink}}" target="_blank" class="d-block">
@@ -127,7 +128,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <i class="fas fa-cog"></i>
 
         <p>
-         الاعدادات
+         التحكم بالنقاط
+     </p>
+ </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('profile') }}" class="nav-link">
+        <i class="fas fa-edit"></i>
+
+        <p>
+         الملف الشخصي
      </p>
  </a>
 </li>
@@ -173,14 +183,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Main Footer -->
 <footer class="main-footer">
     <!-- Default to the left -->
+
     <h4 class="text-center">تنافس</h4>
 </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
-<link rel="stylesheet"href="/js/app.js">
+<script defer src="{{ asset('js/fontawesome.js') }}"></script> <!--load all fontassowme styles -->
 <!-- jQuery -->
 <script src="{{url('/')}}/design/AdminLTE/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->

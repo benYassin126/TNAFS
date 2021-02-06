@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Students;
 use App\Groups;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,9 +25,10 @@ class StudentController extends Controller
     public function index()
     {
         $userID = \Auth::user()->id;
+        $user = User::find($userID);
         $allStudents = Students::orderByDesc('StudentPoints')->select('id','StudentName', 'StudentGroup', 'StudentSuper','StudentPoints')->where('StudentSuper', $userID)->get();
         $allGroups = Groups::select('id','GroupName','GroupSuper')->where('GroupSuper', $userID)->get();
-        return view('layouts.student.index',compact('allGroups','allStudents'));
+        return view('layouts.student.index',compact('allGroups','allStudents','user'));
     }
 
     public function sort(Request $request)
@@ -177,7 +179,7 @@ class StudentController extends Controller
         return abort(401);
     }
     $student->delete();
-    return redirect('student')->with('message', 'تم حذف الطالب ' . $student->StudentName . ' بنجاح ');
+    return redirect('student')->with('message', 'تم حذف العامل ' . $student->StudentName . ' بنجاح ');
 }
 
 

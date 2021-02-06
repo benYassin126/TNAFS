@@ -1,205 +1,275 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <title>نظام تنافس</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@extends('layouts.landingPage')
 
-
-  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/fonts/icomoon/style.css">
-  <link rel="stylesheet"href="/css/app.css">
-
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{url('/')}}/design/AdminLTE/dist/css/bootstrap-rtl.min.css">
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/jquery-ui.css">
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/owl.theme.default.min.css">
-
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/jquery.fancybox.min.css">
-
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/bootstrap-datepicker.css">
-
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/fonts/flaticon/font/flaticon.css">
-
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/aos.css">
-
-  <link rel="stylesheet" href="{{url('/') }}/design/Landingpage/css/style.css">
-  <link rel="stylesheet" href="{{url('/')}}/design/AdminLTE/dist/css/custom-style.css">
-
-</head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-  </div>
-</div>
-
-<div class="site-wrap"  id="home-section">
+@section('content')
 
 
 
-    <div class="site-blocks-cover" style="overflow: hidden;">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
+        <div id="home" class="header-hero bg_cover" style="background:#61bab8;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="header-hero-content text-center">
+                            <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">هلا حياك في  <span class="text-back">تنافس</span></h3>
+                            <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">أبسط نظام لإدارة المناشط الطلابية</h2>
+                            <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">كل مايخص نشاطك التنافسي في صفحة واحدة !</p>
+                            <a href="{{ route('overView') }}" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">ابدأ تنافس ! </a>
+                        </div> <!-- header hero content -->
+                    </div>
+                </div> <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+                            <img style="display: none;" src="{{url('/')}}/design/Landingpage/images/header-hero.png" alt="hero">
+                        </div> <!-- header hero image -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+            <div id="particles-1" class="particles"></div>
+        </div> <!-- header hero -->
+    </header>
 
-          <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
-
-            <img src="{{url('/')}}/design/Landingpage/images/undraw_investing_7u74.svg" alt="Image" class="img-fluid img-absolute">
-
-            <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-6 mr-auto">
-                <h1>تنافس ..</h1>
-                <p class="">حياك في نظام تنافس .. النظام الأسهل والابسط لرصد درجات الطلاب وعرضها بطريقة احترافية..</p>
-                <div>
-                  <a href="{{ route('login') }}" class="btn btn-primary mr-2">يلا نبدأ </a>
-              </div>
-          </div>
-
-
-      </div>
-
-  </div>
-</div>
-</div>
-</div>
-
-<hr>
-
-<div class="site-section" id="features-section">
-  <div class="container">
-    <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
-      <div class="col-7 text-center  mb-5">
-        <h2 class="section-title">مميزات نظام تنافس الرهييب</h2>
-        <p class="lead">نظام تنافس نظام بسسسيط جدا وسهل لرصد درجات طلابك :)</p>
-    </div>
-</div>
-<div class="row align-items-stretch">
-
-
-  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="unit-4 d-block">
-      <div class="unit-4-icon mb-3">
-         <span class="icon-wrap"><i class="ico fas fa-users"></i></span>
-     </div>
-     <div>
-        <h3>تنافس المجموعات</h3>
-        <p>نظام تنافس ماهو محصور بالطلاب بس .. لا تقدر تضيف مجموعات ( أسر ) وتوزع الطلاب على مجموعات وكمان تقدر تضيف نقاط الطلاب لمجموعاتهم</p>
-    </div>
-</div>
-</div>
-
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
-
-    <div class="unit-4 d-block">
-      <div class="unit-4-icon mb-3">
-        <span class="icon-wrap"><i class="ico fas fa-disease"></i></span>
-    </div>
-    <div>
-        <h3>سهل الاستخدام</h3>
-        <p>بكل سهولة تقدر تضيف اكبر عدد ممكن من الطلاب وكمان تقدر تعطي او تخصم نقاط بشكل سريع جدا </p>
-
-    </div>
-</div>
-
-</div>
-
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up"  data-aos-delay="200">
-    <div class="unit-4 d-block">
-      <div class="unit-4-icon mb-3">
-         <span class="icon-wrap"><i class="ico fas fa-magic"></i></span>
-     </div>
-     <div>
-        <h3>عرض النقاط للطلاب بطريقة احترافية</h3>
-        <p>راح يوفرلك النظام رابط خاص بطلابك يقدروا في أي وقت يشوفوا نقاطهم ويتحدث الرابط بشكل تلقائي</p>
-
-    </div>
-</div>
-</div>
-
-
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="unit-4 d-block">
-      <div class="unit-4-icon mb-3">
-        <span class="icon-wrap"><i class="ico fas fa-business-time"></i></span>
-    </div>
-    <div>
-        <h3>في أي وقت ومن أي مكان</h3>
-        <p>نظام تنافس متاح على جميع المنصات .. يعني حتى من الجوال تقدر تتحكم بالطلاب تخيل </p>
-
-    </div>
-</div>
-</div>
-
-
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
-    <div class="unit-4 d-block">
-      <div class="unit-4-icon mb-3">
-        <span class="icon-wrap"><i class="ico fas fa-print"></i></span>
-    </div>
-    <div>
-        <h3>طباعة النتائج او الكشوفات</h3>
-        <p>في حال كنت تحتاج نسخة من اسماء الطلاب للاستخدامات اليدوية .. تنافس ما راح يقصر معك </p>
-    </div>
-</div>
-</div>
-
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="unit-4 d-block">
-      <div class="unit-4-icon mb-3">
-        <span class="icon-wrap"><i class="ico fas fa-mouse-pointer"></i></span>
-    </div>
-    <div>
-        <h3>بضغطة زر تختصر المشوار</h3>
-        <p>تخيل تقدر تحذف كل الطلاب وتصفر نقاطهم او تحول النقاط بين الطلاب كلها بضغطة زر وحدة </p>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<hr>
-<div class="container">
-    <div class="mt-5 row mb-5 site-section">
-      <div class="col-lg-7 order-1 order-lg-2" data-aos="fade-left">
-        <img src="{{url('/')}}/design/Landingpage/images/undraw_metrics_gtu7.svg" alt="Image" class="img-fluid">
-    </div>
-    <div class="col-lg-5 pr-lg-5 mr-auto mt-5 order-2 order-lg-1">
-        <h2 class="text-black">سجل وابدأ الآن</h2>
-        <div class="author-box">
-          <div class="d-flex mb-4">
-            <p class="mb-4">مادري صراحة وش تنتظر ؟ سجل الآن ماراح ياخذ منك عملية التسجيل اكثر من دقيقتين .. اممم اظن اقل كمان
-            </p>
-        </div>
-        <div>
-          <a href="{{ route('register') }}" class="btn btn-primary">يلا نبدأ </a>
-      </div>
-  </div>
-</div>
-</div>
-</div>
+    <!--====== HEADER PART ENDS ======-->
 
 
 
-<script src="{{url('/')}}/design/Landingpage/js/jquery-3.3.1.min.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/jquery-ui.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/popper.min.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/bootstrap.min.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/owl.carousel.min.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/jquery.countdown.min.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/bootstrap-datepicker.min.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/jquery.easing.1.3.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/aos.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/jquery.fancybox.min.js"></script>
-<script src="{{url('/')}}/design/Landingpage/js/jquery.sticky.js"></script>
 
+    <!--====== SERVICES PART START ======-->
 
-<script src="{{url('/')}}/design/Landingpage/js/main.js"></script>
+    <section id="features" class="services-area pt-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-title text-center pb-40">
+                        <h3 class="title">تنافس سهل المشوار ..&#128525; </h3>
+                        <p class="mt-2">كل القروشة اللي كانت تصير حلتها تنافس &#128526;</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="services-icon">
+                            <img class="shape" src="{{url('/')}}/design/Landingpage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="{{url('/')}}/design/Landingpage/images/services-shape-1.svg" alt="shape">
+                            <i class="lni lni-mobile"></i>
+                        </div>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title">مايحتاج لابتوب !</h4>
+                            <p class="text">تنافس صمم بشكل متناسق مع جميع اجهزة الجوال يعني في اي وقت تقدر تدخل النظام وتخلص الشغل </p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="services-icon">
+                            <img class="shape" src="{{url('/')}}/design/Landingpage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="{{url('/')}}/design/Landingpage/images/services-shape-2.svg" alt="shape">
+                            <i class="lni-pizza"></i>
+                        </div>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title">اسهل مما تتوقع</h4>
+                            <p class="text">فتح حساب في تنافس واضافة الطلاب أسهل من أكل البيتزا</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="services-icon">
+                            <img class="shape" src="{{url('/')}}/design/Landingpage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="{{url('/')}}/design/Landingpage/images/services-shape-3.svg" alt="shape">
+                            <i class="lni-invention"></i>
+                        </div>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title">أبهر الطلاب</h4>
+                            <p class="text">من خلال تنافس راح تحصل على رابط خاص بطلابك فيه درجات كل الطلاب و أفضل طالب و أفضل مجموعة .. مصممة بشكل رهيب والمهم انه خاص بطلابك </p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="services-icon">
+                            <img class="shape" src="{{url('/')}}/design/Landingpage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="{{url('/')}}/design/Landingpage/images/services-shape-1.svg" alt="shape">
+                            <i class="lni-users"></i>
+                        </div>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title">تنافس الفرق</h4>
+                            <p class="text">تقدر تضيف عدد لا محدود من الفرق وتسند كل طالب لفريق والشي الرهيب انك تقدر تدمج نقاط الطلاب لمجموعاتهم وقت ماتبي.</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="services-icon">
+                            <img class="shape" src="{{url('/')}}/design/Landingpage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="{{url('/')}}/design/Landingpage/images/services-shape-2.svg" alt="shape">
+                            <i class="lni-printer"></i>
+                        </div>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title">طباعة الكشوف </h4>
+                            <p class="text">في حال كنت تحتاج نسخة من اسماء الطلاب للاستخدامات اليدوية .. تنافس ما راح يقصر معك</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="services-icon">
+                            <img class="shape" src="{{url('/')}}/design/Landingpage/images/services-shape.svg" alt="shape">
+                            <img class="shape-1" src="{{url('/')}}/design/Landingpage/images/services-shape-3.svg" alt="shape">
+                            <i class="lni-pencil-alt"></i>
+                        </div>
+                        <div class="services-content mt-30">
+                            <h4 class="services-title">أكثر من مشرف بحساب واحد</h4>
+                            <p class="text">حساب واحد للمنشط .. يعني في حال تعذر عليك دخول النظام أعط الحساب لخويك وازهل .</p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
 
-</body>
-</html>
+    <!--====== SERVICES PART ENDS ======-->
+
+    <!--====== TESTIMONIAL PART START ======-->
+
+    <section id="testimonial" class="testimonial-area pt-120 pb-40" style="direction: ltr">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="section-title text-center pb-40">
+                        <div class="line m-auto"></div>
+                        <h3 class="title">اللي جربوا تنافس<span> وش قالوا ؟  </span></h3>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="col-lg-4">
+                    <div class="single-testimonial">
+                        <div class="testimonial-review d-flex align-items-center justify-content-between">
+                            <div class="quota">
+                                <i class="lni-quotation"></i>
+                            </div>
+                            <div class="star">
+                                <ul>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                        </div>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <div class="author-image">
+                                <img class="shape" src="{{url('/')}}/design/Landingpage/images/textimonial-shape.svg" alt="shape">
+                                <img class="author" src="{{url('/')}}/design/Landingpage/images/author-1.png" alt="author">
+                            </div>
+                            <div class="author-content media-body">
+                                <h6 class="holder-name">Jenny Deo</h6>
+                                <p class="text">CEO, SpaceX</p>
+                            </div>
+                        </div>
+                    </div> <!-- single testimonial -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-testimonial">
+                        <div class="testimonial-review d-flex align-items-center justify-content-between">
+                            <div class="quota">
+                                <i class="lni-quotation"></i>
+                            </div>
+                            <div class="star">
+                                <ul>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                        </div>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <div class="author-image">
+                                <img class="shape" src="{{url('/')}}/design/Landingpage/images/textimonial-shape.svg" alt="shape">
+                                <img class="author" src="{{url('/')}}/design/Landingpage/images/author-2.png" alt="author">
+                            </div>
+                            <div class="author-content media-body">
+                                <h6 class="holder-name">Marjin Otte</h6>
+                                <p class="text">UX Specialist, Yoast</p>
+                            </div>
+                        </div>
+                    </div> <!-- single testimonial -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-testimonial">
+                        <div class="testimonial-review d-flex align-items-center justify-content-between">
+                            <div class="quota">
+                                <i class="lni-quotation"></i>
+                            </div>
+                            <div class="star">
+                                <ul>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                        </div>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <div class="author-image">
+                                <img class="shape" src="{{url('/')}}/design/Landingpage/images/textimonial-shape.svg" alt="shape">
+                                <img class="author" src="{{url('/')}}/design/Landingpage/images/author-3.png" alt="author">
+                            </div>
+                            <div class="author-content media-body">
+                                <h6 class="holder-name">David Smith</h6>
+                                <p class="text">CTO, Alphabet</p>
+                            </div>
+                        </div>
+                    </div> <!-- single testimonial -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-testimonial">
+                        <div class="testimonial-review d-flex align-items-center justify-content-between">
+                            <div class="quota">
+                                <i class="lni-quotation"></i>
+                            </div>
+                            <div class="star">
+                                <ul>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                    <li><i class="lni-star-filled"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p class="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.</p>
+                        </div>
+                        <div class="testimonial-author d-flex align-items-center">
+                            <div class="author-image">
+                                <img class="shape" src="{{url('/')}}/design/Landingpage/images/textimonial-shape.svg" alt="shape">
+                                <img class="author" src="{{url('/')}}/design/Landingpage/images/author-2.png" alt="author">
+                            </div>
+                            <div class="author-content media-body">
+                                <h6 class="holder-name">Fajar Siddiq</h6>
+                                <p class="text">COO, MakerFlix</p>
+                            </div>
+                        </div>
+                    </div> <!-- single testimonial -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== TESTIMONIAL PART ENDS ======-->
+

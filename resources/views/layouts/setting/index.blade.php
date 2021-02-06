@@ -26,27 +26,24 @@
 <div class="content">
   <div class="container-fluid">
     <div class="row text-center ">
-
       <div class="col-sm-4">
         <div class="card w-100 mt-4">
+            <h6 class="card-footer"><i class="fas fa-plus"></i> اضافة نقاط الطلاب الى مجموعاتهم</h6>
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-plus"></i> اضافة نقاط الطلاب الى مجموعاتهم</h5>
-            <hr>
             <p class="card-text">يمكنك هذا الاجراء من اضافة نقاط الطلاب الى مجموعاتهم</p>
             <hr>
-            <a onclick="return confirm('{{__('هل أنت متأكد من انك تريد اضافة نقاط الطلاب الى مجموعاتهم ؟ ننصح باستخدام هذا الاجراء نهاية فترة الرصد وقبل الاعلان')}}')" href="{{ route('setting.addPointsToGroup') }}" class="btn btn-success ">تنفيذ</a>
+            <a onclick="return confirm('{{__('هل أنت متأكد من انك تريد اضافة نقاط الطلاب الى مجموعاتهم ؟ ننصح باستخدام هذا الاجراء نهاية فترة الرصد وقبل الاعلان')}}')" href="{{ route('setting.addPointsToGroup') }}" class="btn btn-tnafs ">تنفيذ</a>
           </div>
         </div>
       </div>
 
       <div class="col-sm-4">
         <div class="card w-100 mt-4">
+             <h6 class="card-footer"><i class="fas fa-gifts"></i> توزيع نقاط على طلاب مجموعة محددة</h6>
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-gifts"></i> توزيع نقاط على طلاب مجموعة محددة</h5>
-            <hr>
             <p class="card-text">يمكنك هذا الاجراء من اعطاء نقاط معينة لطلاب مجموعة محددة</p>
             <hr>
-            <a href="#" class="btn btn-info " data-toggle="modal" data-target="#Gift">تنفيذ</a>
+            <a href="#" class="btn btn-tnafs " data-toggle="modal" data-target="#Gift">تنفيذ</a>
           </div>
         </div>
       </div>
@@ -54,12 +51,11 @@
 
       <div class="col-sm-4">
         <div class="card w-100 mt-4">
+            <h6 class="card-footer"><i class="fas fa-exchange-alt"></i> تحويل النقاط</h6>
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-exchange-alt"></i> تحويل النقاط</h5>
-            <hr>
             <p class="card-text">يمكنك هذا الاجراء من تحويل نقاط طالب معين الى طالب اخر</p>
             <hr>
-            <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#Transfer">تنفيذ</a>
+            <a href="#" class="btn btn-tnafs"  data-toggle="modal" data-target="#Transfer">تنفيذ</a>
           </div>
         </div>
       </div>
@@ -67,15 +63,14 @@
 
       <div class="col-sm-4">
         <div class="card w-100 mt-4">
+            <h6 class="card-footer"><i class="fab fa-creative-commons-zero"></i>  تصفير جميع النقاط</h6>
           <div class="card-body">
-            <h5 class="card-title"><i class="fab fa-creative-commons-zero"></i>  تصفير جميع النقاط</h5>
-            <hr>
             <p class="card-text">يمكنك هذا الاجراء من جعل الجميع نقاطهم صفر</p>
             <hr>
             <form action="{{ route('setting.restPoints') }}" method="post">
                 @csrf
-                <button  type="submit" name="restStudent" class="btn btn-primary" onclick="confirm('هل أنت متأكد من انك تريد تصفير نقاط جميع الطلاب')">الطلاب </button>
-                <button type="submit" name="restGroup" class="btn btn-primary"onclick="confirm('هل انت متاكد من انك تريد تصفير نقاط المجموعات')">المجموعات</button>
+                <button  type="submit" name="restStudent" class="btn btn-tnafs" onclick="confirm('هل أنت متأكد من انك تريد تصفير نقاط جميع الطلاب')">الطلاب </button>
+                <button type="submit" name="restGroup" class="btn btn-tnafs"onclick="confirm('هل انت متاكد من انك تريد تصفير نقاط المجموعات')">المجموعات</button>
             </form>
           </div>
         </div>
@@ -86,9 +81,10 @@
 
       <div class="col-sm-4">
         <div class="card w-100 mt-4">
+            <h6 class="card-footer"><i class="fas fa-trash-alt"></i> حذف جميع الطلاب</h6>
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-trash-alt"></i> حذف جميع الطلاب</h5>
-            <hr>
+
+
             <p class="card-text">يمكنك هذا الاجراء من حذف جميع الطلاب من النظام</p>
             <hr>
             <form action="{{ route('setting.deleteAllStudents') }}" method="post">

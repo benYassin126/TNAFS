@@ -28,8 +28,8 @@
 @endif
 <!-- Strat MSG -->
 
-    <div class="card card-info mb-4">
-     <div class="card-header">
+    <div class="card  mb-4 mt-4">
+     <div class="card-footer">
         <h3 class="card-title" style="display: inline-block;">تعديل بينات  [ {{$thisStudent->StudentName}} ]</h3>
                  <form method="Post" action="{{route('student.destroy',$thisStudent->id)}}" style="float: left;">
           @csrf
@@ -58,9 +58,9 @@
 
 
 
-<div class="card-footer">
+<div class="card-header">
 
-    <button type="submit" name="update" class="btn btn-success btn-block"> <i class="fas fa-edit fa-sm"></i> حفظ التعديلات  </button>
+    <button type="submit" name="update" class="btn btn-tnafs btn-block"> <i class="fas fa-edit fa-sm"></i> حفظ التعديلات  </button>
 
 </div>
 

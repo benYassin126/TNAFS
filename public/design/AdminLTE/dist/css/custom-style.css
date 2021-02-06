@@ -1,68 +1,59 @@
 @font-face {
-    font-family: Vazir;
-    src: url('../fonts/Vazir.eot');
-    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Vazir.woff2') format('woff2'),
-    url('../fonts/Vazir.woff') format('woff'),
-    url('../fonts/Vazir.ttf') format('truetype');
+    font-family: '29LT Bukra';
+    src: url('fonts/29LTBukra-Regular.eot');
+    src: url('../fonts/29LTBukra-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/29LTBukra-Regular.woff2') format('woff2'),
+        url('../fonts/29LTBukra-Regular.woff') format('woff'),
+        url('../fonts/29LTBukra-Regular.ttf') format('truetype'),
+        url('../fonts/29LTBukra-Regular.svg#29LTBukra-Regular') format('svg');
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Vazir;
-    src: url('../fonts/Vazir-Bold.eot');
-    src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Vazir-Bold.woff2') format('woff2'),
-    url('../fonts/Vazir-Bold.woff') format('woff'),
-    url('../fonts/Vazir-Bold.ttf') format('truetype');
+    font-family: '29LT Bukra';
+    src: url('fonts/29LTBukra-Bold.eot');
+    src: url('../fonts/29LTBukra-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/29LTBukra-Bold.woff2') format('woff2'),
+        url('../fonts/29LTBukra-Bold.woff') format('woff'),
+        url('../fonts/29LTBukra-Bold.ttf') format('truetype'),
+        url('../fonts/29LTBukra-Bold.svg#29LTBukra-Bold') format('svg');
     font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Vazir;
-    src: url('../fonts/Vazir-Light.eot');
-    src: url('../fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Vazir-Light.woff2') format('woff2'),
-    url('../fonts/Vazir-Light.woff') format('woff'),
-    url('../fonts/Vazir-Light.ttf') format('truetype');
+    font-family: '29LT Bukra';
+    src: url('../fonts/29LTBukra-Light.eot');
+    src: url('../fonts/29LTBukra-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/29LTBukra-Light.woff2') format('woff2'),
+        url('../fonts/29LTBukra-Light.woff') format('woff'),
+        url('../fonts/29LTBukra-Light.ttf') format('truetype'),
+        url('../fonts/29LTBukra-Light.svg#29LTBukra-Light') format('svg');
     font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
-
-@font-face {
-    font-family: Vazir;
-    src: url('../fonts/Vazir-Medium.eot');
-    src: url('../fonts/Vazir-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Vazir-Medium.woff2') format('woff2'),
-    url('../fonts/Vazir-Medium.woff') format('woff'),
-    url('../fonts/Vazir-Medium.ttf') format('truetype');
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: Vazir;
-    src: url('../fonts/Vazir-Thin.eot');
-    src: url('../fonts/Vazir-Thin.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Vazir-Thin.woff2') format('woff2'),
-    url('../fonts/Vazir-Thin.woff') format('woff'),
-    url('../fonts/Vazir-Thin.ttf') format('truetype');
-    font-weight: 100;
-}
-
-@font-face {
-    font-family: Vazir;
-    src: url('../fonts/Vazir-Black.eot');
-    src: url('../fonts/Vazir-Black.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/Vazir-Black.woff2') format('woff2'),
-    url('../fonts/Vazir-Black.woff') format('woff'),
-    url('../fonts/Vazir-Black.ttf') format('truetype');
-    font-weight: 900;
-}
-
 /*---------------------------------- End of fonts ---------------------------------- */
 
 body {
-    font-family: 'Vazir', sans-serif !important;
+   font-family: '29LT Bukra';
 }
+.btn-tnafs {
+      color: #fff !important;
+    background-color: #61bab8;
+    border-color: #61bab8;
+}
+.btn-tnafs:hover {
+  background: #b4a882;
+  color: #fff;
+  border-color:#b4a882;
+
+}
+
+
 
 .ltr {
     direction:ltr;
@@ -86,7 +77,16 @@ ul {
 
 
 /*------------------------------------ contacts-list ------------------------------------*/
-
+.card-footer {
+    background:#202133;
+    color: #fff;
+}
+.bg-success, .alert-success, .label-success,.bg-info, .alert-info, .label-info {
+    background: linear-gradient(#61bab8, #6c757d);
+}
+.green {
+    background: #28a745 !important
+}
 .contacts-list-img {
     float: right;
 }
@@ -97,7 +97,14 @@ ul {
 }
 
 
+
 /* sidebar */
+.sidebar-dark-primary {
+background:#16263f;
+}
+.sidebar-dark-primary .sidebar a {
+    color: #e3e3e3;
+}
 
 .sidebar {
     direction: rtl;
@@ -123,6 +130,17 @@ ul {
     left:10px;
 }
 
+.user-panel,.brand-link {
+    border-bottom: none !important;
+}
+
+.badge-danger {
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #17a2b8;
+    float: left;
+    margin-top: 6px;
+}
 .nav-sidebar .nav-link>p>.right {
     left: 1rem;
     right: auto;
@@ -269,7 +287,7 @@ ul {
 /*---------------------------------- Persian Date Picker ---------------------------------- */
 
 .datepicker-plot-area {
-    font-family: 'Vazir', sans-serif;
+    font-family: '29LT Bukra';
 }
 
 
@@ -287,15 +305,14 @@ ul {
 }
 
 .PasteLink {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
+    text-align: center;
 }
 
 /*STRART Student Show*/
 
-.StudentBody {
-    background: #eee;
-}
+
 .studentTable {
   box-shadow: -3px 2px 18px 3px #88888821
 
@@ -304,13 +321,18 @@ ul {
     display: inline-block;
 }
 .win {
-    padding: 4px;
-    font-size: 20px;
-    color: #00864e;
+    font-size: 25px;
+    color: #329651;
+    font-weight: bold;
+}
+.win-footer {
+    background-color: #f8f9fa;
+    color: #1f2d3d;
+    padding: 15px;
 }
 
 .studentTable tr:nth-child(1){
-    background: #eee;
+    background: #f8f9fa;
 
 }
 .studentTable .topNames{

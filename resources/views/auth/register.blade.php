@@ -1,43 +1,24 @@
+@extends('layouts.landingPage')
+@section('content')
+<div id="home" class="header-hero bg_cover" style="background:#61bab8;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="header-hero-content text-center">
+          <div class="login-box">
+            <div>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>التسجيل في تنافس</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{url('/')}}/design/AdminLTE/dist/css/adminlte.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="{{url('/')}}/design/AdminLTE/plugins/iCheck/square/blue.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-  <!-- bootstrap rtl -->
-  <link rel="stylesheet"  href="{{url('/')}}/design/AdminLTE/dist/css/bootstrap-rtl.min.css">
-  <!-- template rtl version -->
-  <link rel="stylesheet"  href="{{url('/')}}/design/AdminLTE/dist/css/custom-style.css">
-</head>
-<body class="hold-transition register-page">
-    <div class="register-box">
-      <div class="register-logo">
-          <b>تنافس</b>
-      </div>
-
-      <div class="card">
-        <div class="card-body register-card-body">
-          <p class="login-box-msg">حياك مشرفنا العزيز</p>
+            </div>
+            <!-- /.login-logo -->
+            <div class="card">
+              <div class="card-body login-card-body">
+                <h4 class="text-center  " style="color: #b4a882">حساب جديد في تنافس</h4>
+                <p class="mb-4 mt-2">خطوة اخيرة وينور تنافس بتسجيلك</p>
 
           <form method="POST" action="{{ route('register') }}">
               @csrf
               <div class="input-group mb-3">
-                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required placeholder="اسمك">
+                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required placeholder="اسم الجهة">
                 <div class="input-group-append">
                     <span class="fa fa-user input-group-text"></span>
                 </div>
@@ -86,33 +67,17 @@
                 @endif
             </div>
 
-    <button type="submit" class="btn btn-primary btn-block btn-flat mb-4">تسجيل</button>
+    <button type="submit" class="btn btn-tnafs btn-block btn-flat mb-4">تسجيل</button>
 
 </form>
-
-
-
-<a href="{{ route('login') }}" class="text-center mb-4">عندك حساب ؟</a>
-</div>
-<!-- /.form-box -->
-</div><!-- /.card -->
-</div>
-<!-- /.register-box -->
-
-<!-- jQuery -->
-<script src="{{url('/')}}/design/AdminLTE/plugins/jquery/jquery.js"></script>
-<!-- Bootstrap 4 -->
-<script  src="{{url('/')}}/design/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- iCheck -->
-<script  src="{{url('/')}}/design/AdminLTE/plugins/iCheck/icheck.min.js"></script>
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass   : 'iradio_square-blue',
-      increaseArea : '20%' // optional
-  })
-})
-</script>
-</body>
-</html>
+              </div>
+              <!-- /.login-card-body -->
+            </div>
+          </div>
+          </div> <!-- header hero content -->
+        </div>
+        </div> <!-- row -->
+            </div> <!-- container -->
+            <div id="particles-1" class="particles"></div>
+            </div> <!-- header hero -->
+            @endsection

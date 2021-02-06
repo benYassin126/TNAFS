@@ -10,7 +10,7 @@
 
 <!-- Strat MSG -->
    @if(session()->has('message'))
-   <div class="alert alert-success  fade show" role="alert">
+   <div class="alert alert-success green  fade show" role="alert">
        <strong>{{ session()->get('message') }}</strong>
        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -30,8 +30,8 @@
 <!-- END MSG -->
 
 
-<div class="card card-info mb-4">
-   <div class="card-header">
+<div class="card  mt-4">
+   <div class="card-footer">
     <h3 class="card-title">اضف الطلاب من هنا</h3>
 </div>
 <!-- /.card-header -->
@@ -39,8 +39,8 @@
 <form class="form-horizontal" action="{{ route('student.store') }}" method="post">
 
     @include('layouts.student._part._studentForm')
-    <div class="card-footer">
-  <button type="submit" class="btn btn-success btn-block">حفظ الطالب</button>
+    <div class="card-header">
+  <button type="submit" class="btn btn-tnafs btn-block">حفظ الطالب</button>
 
 </div>
 

@@ -18,11 +18,12 @@
 </style>
 </head>
 <div class="text-center">
-  <button  onclick="window.print()" class="mt-4 mb-4 btn btn-warning  noprint"><i class="fas fa-print"></i> اطــــــبــــــع</button>
-  <button  onclick="window.history.back()" class="mt-4 mb-4 btn btn-primary  noprint"><i class="fas fa-undo-alt"></i> عودة</button>
+  <button  onclick="window.print()" class="mt-4 mb-4 btn btn-tnafs  noprint"><i class="fas fa-print"></i> اطبع</button>
+  <button  onclick="window.history.back()" class="mt-4 mb-4 btn btn-tnafs  noprint"><i class="fas fa-undo-alt"></i> عودة</button>
 </div>
-
-
+@if($user->Logo != null)
+ <img style="border: 1px solid #3333331a;" class=" print-logo" src="./img/storage/logos/{{$user->email}}.png" width="150">
+@endif
 <table class="table  table-bordered">
     <thead>
         <tr>

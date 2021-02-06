@@ -5,11 +5,11 @@
 
 <!-- Main content -->
 <div class="content">
-  <div class="container-fluid">
+  <div class="container-fluid pt-4">
     <!-- Strat MSG -->
 @if(session()->has('message'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="display-success">
-       <strong>{{ session()->get('message') }}</strong>
+    <div class="alert alert-success green fade show" role="alert" id="display-success">
+       <strong><i class="fas fa-check"></i> {{ session()->get('message') }}</strong>
        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -41,9 +41,9 @@
 <div class="row">
     <div class="card mt-4 text-center">
         <div class="card-header">
+        <a href="{{route('print')}}" class="btn btn-tnafs btn-block"><i class="fas fa-print"></i> طباعة النتائج</a>
         <a href="{{route('group.create')}}" class="btn btn-success btn-block mt-4"><i class="fas fa-user"></i> اضافة مجموعة</a>
-        <a href="{{route('print')}}" class="btn btn-warning btn-block"><i class="fas fa-print"></i> طباعة النتائج</a>
-    </div>
+     </div>
     <!-- /.card-header -->
     <div class="card-body table-responsive-sm">
       <table class="table  table-bordered table-striped">
@@ -66,7 +66,7 @@
             <td>
 
 
-                <buttn data-toggle="modal" data-target="#{{$group->id}}" class="btn btn-primary "><i class="fas fa-plus-circle"></i></buttn>
+                <buttn data-toggle="modal" data-target="#{{$group->id}}" class="btn btn-tnafs mb-2 "><i class="fas fa-plus-circle"></i></buttn>
 
 
                 <!-- Modal -->
@@ -82,14 +82,14 @@
                   <div class="modal-body">
                     <form action="{{route('group.points')}}" method="Post">
                         @csrf
-                        <input type="number" step="0.01"  name="points" placeholder="0" autofocus required> <span class="pl-2">نقطة</span>
+                        <input type="number" step="0.01" class="mb-2"  name="points" placeholder="0" required> <span class="pl-2">نقطة</span>
                         <input type="text" name="id" value="{{$group->id}}" style="display: none;">
                         <button type="submit" name="add" class="btn btn-success">اضافة</button>
                         <button type="submit" name="dis" class="btn btn-danger">خصم</button>
                     </form>
                 </div>
 
-                <button type="button" class="btn btn-danger" data-dismiss="modal">اغلاق</button>
+                <button type="button" class="btn " data-dismiss="modal">اغلاق</button>
             </div>
         </div>
     </div>
@@ -102,27 +102,23 @@
 
 
 
-    <a href="{{route('group.edit',$group->id) }}" class="btn btn-info "><i class="fas fa-edit"></i></a>
+    <a href="{{route('group.edit',$group->id) }}" class="btn btn-tnafs mb-2 "><i class="fas fa-edit"></i></a>
 
 
      <form method="post" action="{{route('group.destroy',$group->id)}}" style="display: inline-block;">
       @csrf
          @method('DELETE')
-        <button onclick="return confirm('{{__('هل انت متاكد ؟')}}')"  class="btn btn-danger "><i class="fas fa-trash-alt"></i></buttn>
+        <button onclick="return confirm('{{__('هل انت متاكد ؟')}}')"  class="btn mb-2 "><i class="fas fa-trash-alt"></i></buttn>
       </form>
   </td>
 </tr>
 
 @empty
 
-<div class="alert alert-danger  fade show" role="alert">
-   <h4>لم تقم باضافة اي مجموعة بعد</h4>
-   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-</button>
-</div>
-<a href="{{route('group.create')}}" class="btn btn-info mb-4"><i class="fas fa-plus"></i> اضافة مجموعة </a>
-
+    <div class="alert">
+     <p>لم تقم باضافة اي  مجموعة بعد</p>
+      <a style="text-decoration: none;" href="{{route('group.create')}}" class="btn btn-tnafs mb-4"><i class="fas fa-plus"></i> اضافة  مجموعة </a>
+    </div>
 @endforelse
 </tbody>
 <tfoot>

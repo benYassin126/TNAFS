@@ -29,8 +29,8 @@
 <!-- END MSG -->
 
 
-<div class="card card-info mb-4">
-   <div class="card-header">
+<div class="card  mb-4">
+   <div class="card-footer">
     <h3 class="card-title">تعديل بيانات المجموعة</h3>
 </div>
 <!-- /.card-header -->
@@ -38,8 +38,8 @@
 <form class="form-horizontal" action="{{route('group.update',$thisGroup)}}" method="post">
     @method('PATCH')
     @include('layouts.group._part._groupForm')
-    <div class="card-footer">
-  <button type="submit" class="btn btn-success btn-block">حفظ التعديلات</button>
+    <div class="card-header">
+  <button type="submit" class="btn btn-tnafs btn-block">حفظ التعديلات</button>
 
 </div>
 
